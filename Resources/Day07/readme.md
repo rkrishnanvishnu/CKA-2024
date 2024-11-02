@@ -26,4 +26,12 @@ spec:
     ports:
     - containerPort: 80
 ```
+kubectl config get-contexts                          # display list of contexts
+
+kubectl config get-contexts -o name                  # get all context names
+
+kubectl config current-context                       # display the current-context
+
+kubectl config use-context my-cluster-name           # set the default context to my-cluster-name
+
 
