@@ -42,5 +42,5 @@ kubectl rollout status -w deployment/frontend
 ### Rolling restart of the "frontend" deployment
 kubectl rollout restart deployment/frontend  
 
-### Rolling restart of the "frontend" deployment
+### Dry run
 kubectl scale --current-replicas=6 --replicas=10 deployment/nginx-deploy --dry-run=client -o yaml >deply.yaml
