@@ -27,8 +27,17 @@ replication controler vs replicationset
 
 ###kubectl scale --current-replicas=6 --replicas=8 deployment/nginx-deploy 
 
-kubectl rollout history deployment/frontend                      # Check the history of deployments including the revision
-kubectl rollout undo deployment/frontend                         # Rollback to the previous deployment
-kubectl rollout undo deployment/frontend --to-revision=2         # Rollback to a specific revision
-kubectl rollout status -w deployment/frontend                    # Watch rolling update status of "frontend" deployment until completion
-kubectl rollout restart deployment/frontend                      # Rolling restart of the "frontend" deployment
+# Check the history of deployments including the revision
+kubectl rollout history deployment/frontend  
+
+# Rollback to the previous deployment
+kubectl rollout undo deployment/frontend  
+
+ # Rollback to a specific revision
+kubectl rollout undo deployment/frontend --to-revision=2
+
+# Watch rolling update status of "frontend" deployment until completion
+kubectl rollout status -w deployment/frontend   
+
+ # Rolling restart of the "frontend" deployment
+kubectl rollout restart deployment/frontend                     
