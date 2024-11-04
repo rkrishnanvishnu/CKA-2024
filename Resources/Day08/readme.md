@@ -23,3 +23,12 @@ replication controler vs replicationset
 ####Replication Controller is older and more basic, limited to equality-based selectors.
 
 ####ReplicaSet is newer, more flexible, and supports both equality-based and set-based selectors. It is the preferred method and is often managed by a Deployment for easier updates and rollbacks.
+
+
+###kubectl scale --current-replicas=6 --replicas=8 deployment/nginx-deploy 
+
+kubectl rollout history deployment/frontend                      # Check the history of deployments including the revision
+kubectl rollout undo deployment/frontend                         # Rollback to the previous deployment
+kubectl rollout undo deployment/frontend --to-revision=2         # Rollback to a specific revision
+kubectl rollout status -w deployment/frontend                    # Watch rolling update status of "frontend" deployment until completion
+kubectl rollout restart deployment/frontend                      # Rolling restart of the "frontend" deployment
