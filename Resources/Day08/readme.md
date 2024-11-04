@@ -20,24 +20,24 @@ https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
 
 replication controler vs replicationset
 
-####Replication Controller is older and more basic, limited to equality-based selectors.
+##Replication Controller is older and more basic, limited to equality-based selectors.
 
-####ReplicaSet is newer, more flexible, and supports both equality-based and set-based selectors. It is the preferred method and is often managed by a Deployment for easier updates and rollbacks.
+##ReplicaSet is newer, more flexible, and supports both equality-based and set-based selectors. It is the preferred method and is often managed by a Deployment for easier updates and rollbacks.
 
 
 ###kubectl scale --current-replicas=6 --replicas=8 deployment/nginx-deploy 
 
-# Check the history of deployments including the revision
+#Check the history of deployments including the revision
 kubectl rollout history deployment/frontend  
 
-# Rollback to the previous deployment
+#Rollback to the previous deployment
 kubectl rollout undo deployment/frontend  
 
- # Rollback to a specific revision
+#Rollback to a specific revision
 kubectl rollout undo deployment/frontend --to-revision=2
 
-# Watch rolling update status of "frontend" deployment until completion
+#Watch rolling update status of "frontend" deployment until completion
 kubectl rollout status -w deployment/frontend   
 
- # Rolling restart of the "frontend" deployment
+#Rolling restart of the "frontend" deployment
 kubectl rollout restart deployment/frontend                     
