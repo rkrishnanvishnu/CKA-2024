@@ -19,6 +19,7 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
 
 replication controler vs replicationset
+
 ####Replication Controller is older and more basic, limited to equality-based selectors.
 
 ####ReplicaSet is newer, more flexible, and supports both equality-based and set-based selectors. It is the preferred method and is often managed by a Deployment for easier updates and rollbacks.
