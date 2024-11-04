@@ -40,4 +40,7 @@ kubectl rollout undo deployment/frontend --to-revision=2
 kubectl rollout status -w deployment/frontend   
 
 ### Rolling restart of the "frontend" deployment
-kubectl rollout restart deployment/frontend                     
+kubectl rollout restart deployment/frontend  
+
+### Rolling restart of the "frontend" deployment
+kubectl scale --current-replicas=6 --replicas=10 deployment/nginx-deploy --dry-run=client -o yaml >deply.yaml
