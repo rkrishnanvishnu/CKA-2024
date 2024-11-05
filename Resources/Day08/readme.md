@@ -75,3 +75,15 @@ StatefulSet: The Kubernetes Controller for Stateful Applications
     Pod Identity: Pods in a stateful application have stable identities and persistent storage, unlike stateless applications where Pods are interchangeable.
 
 
+    A DaemonSet in Kubernetes ensures that a specific Pod runs on all (or a subset of) nodes within the cluster. This is particularly useful for deploying system-level applications that need to operate on every node.
+Key Characteristics of DaemonSet:
+
+    One Pod Per Node: Ensures exactly one Pod per node, making it suitable for node-specific tasks.
+    Automatic Pod Management: When new nodes are added to the cluster, DaemonSet automatically deploys the specified Pod on them. Similarly, Pods are removed when nodes are deleted.
+    Use Cases:
+        System Monitoring: Deploying monitoring agents like Prometheus Node Exporter or Datadog agents to collect node-level metrics.
+        Log Collection: Using logging agents such as Fluentd or Logstash to aggregate logs from all nodes.
+        Network and Security: Running network proxies, VPN agents, or security tools (like intrusion detection systems) on every node.
+        Storage Daemons: Managing storage services that require local storage access, such as Ceph or GlusterFS.
+
+
