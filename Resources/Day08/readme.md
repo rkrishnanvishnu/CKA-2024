@@ -44,3 +44,34 @@ kubectl rollout restart deployment/frontend
 
 ### Dry run
 kubectl scale --current-replicas=6 --replicas=10 deployment/nginx-deploy --dry-run=client -o yaml >deply.yaml
+
+### Daemonset vs deployment
+## DaemonSet:
+
+    System daemons that need to run on every node.
+    Monitoring, logging, and security tools.
+    Network or storage management across nodes.
+
+## Deployment:
+
+    Stateless applications needing high availability.
+    Web servers, APIs, and continuous deployment pipelines.
+    Applications that require flexible scaling and version control.
+
+## satefullset
+
+StatefulSet: The Kubernetes Controller for Stateful Applications
+
+## Kubernetes uses StatefulSets to manage stateful applications. A StatefulSet provides:
+
+    Stable, unique network identifiers for each Pod.
+    Ordered, graceful deployment and scaling.
+    Persistent storage using Persistent Volumes.
+
+    Key Differences from Stateless Applications:
+
+    Data Persistence: Stateful applications need persistent storage; stateless applications do not.
+    Order of Operations: Stateful applications often require operations to be executed in a particular order.
+    Pod Identity: Pods in a stateful application have stable identities and persistent storage, unlike stateless applications where Pods are interchangeable.
+
+
