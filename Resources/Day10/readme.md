@@ -15,5 +15,8 @@
 
 ![image](https://github.com/piyushsachdeva/CKA-2024/assets/40286378/d9ae95d5-7224-4d5b-b260-ed09fc53c6fd)
 
+## to get ip
+kubectl get pods -o wide 
+
 
 
