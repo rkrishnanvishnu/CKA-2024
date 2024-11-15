@@ -23,19 +23,21 @@ kubectl get pods -o wide
  - kubectl create ns ns1
  
  ## Create a deployment with a single replica in each of these namespaces with the image as nginx and name as deploy-ns1 and deploy-ns2, respectively
- # kubectl create deployment deploy-ns1 --image=nginx -n ns1
- # kubectl create deployment deploy-ns2 --image=nginx -n ns2
+ - kubectl create deployment deploy-ns1 --image=nginx -n ns1
+ - kubectl create deployment deploy-ns2 --image=nginx -n ns2
  ## Get the IP address of each of the pods (Remember the kubectl command for that?)
-  # kubectl get pods -o wide -n ns1
-  # kubectl get pods -o wide -n ns1
+  - kubectl get pods -o wide -n ns1
+  - kubectl get pods -o wide -n ns1
 ## Exec into the pod of deploy-ns1 and try to curl the IP address of the pod running on deploy-ns2
-# kubectl exec -it podname -n ns1 -- sh
+- kubectl exec -it podname -n ns1 -- sh
 ## Your pod-to-pod connection should work, and you should be able to get a successful response back.
-# curl to other pod ip
+  - curl to other pod ip
 ## Now scale both of your deployments from 1 to 3 replicas.
-# kubectl scale --replicas=3 deployment/deploy-ns1 -n ns1
-# kubectl scale --replicas=3 deployment/deploy-ns2 -n ns2
-- Create two services to expose both of your deployments and name them svc-ns1 and svc-ns2
+- kubectl scale --replicas=3 deployment/deploy-ns1 -n ns1
+- kubectl scale --replicas=3 deployment/deploy-ns2 -n ns2
+## Create two services to expose both of your deployments and name them svc-ns1 and svc-ns2
+- kubectl expose  --name svc-ns1 deployment/deploy-ns1 --port 80 -n ns1
+- kubectl expose --name svc-ns1 deployment/deploy-ns2 --port=80 -n ns2
 - exec into each pod and try to curl the IP address of the service running on the other namespace.
 - This curl should work.
 - Now try curling the service name instead of IP. You will notice that you are getting an error and cannot resolve the host.
