@@ -19,8 +19,8 @@
 kubectl get pods -o wide 
 
  ## Create two namespaces and name them ns1 and ns2
- # kubectl create ns ns1
- # kubectl create ns ns1
+ kubectl create ns ns1
+ kubectl create ns ns1
  
  ## Create a deployment with a single replica in each of these namespaces with the image as nginx and name as deploy-ns1 and deploy-ns2, respectively
  # kubectl create deployment deploy-ns1 --image=nginx -n ns1
