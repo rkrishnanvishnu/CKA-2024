@@ -31,7 +31,10 @@ kubectl get pods -o wide
 ##Exec into the pod of deploy-ns1 and try to curl the IP address of the pod running on deploy-ns2
 #kubectl exec -it podname -n ns1 -- sh
 ##Your pod-to-pod connection should work, and you should be able to get a successful response back.
-- Now scale both of your deployments from 1 to 3 replicas.
+#curl to other pod ip
+##Now scale both of your deployments from 1 to 3 replicas.
+#kubectl scale --replicas=3 deployment/deploy-ns1 -n ns1
+#kubectl scale --replicas=3 deployment/deploy-ns1 -n ns2
 - Create two services to expose both of your deployments and name them svc-ns1 and svc-ns2
 - exec into each pod and try to curl the IP address of the service running on the other namespace.
 - This curl should work.
