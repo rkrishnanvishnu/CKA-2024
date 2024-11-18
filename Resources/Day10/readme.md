@@ -38,10 +38,11 @@ kubectl get pods -o wide
 ## Create two services to expose both of your deployments and name them svc-ns1 and svc-ns2
 - kubectl expose  --name svc-ns1 deployment/deploy-ns1 --port 80 -n ns1
 - kubectl expose --name svc-ns1 deployment/deploy-ns2 --port=80 -n ns2
-- exec into each pod and try to curl the IP address of the service running on the other namespace.
-- This curl should work.
-- Now try curling the service name instead of IP. You will notice that you are getting an error and cannot resolve the host.
-- Now use the FQDN of the service and try to curl again, this should work.
+## exec into each pod and try to curl the IP address of the service running on the other namespace.
+- for dns /etc/resolv.conf
+## This curl should work.
+## Now try curling the service name instead of IP. You will notice that you are getting an error and cannot resolve the host.
+- Now use the FQDN (fully qualified domain name)of the service and try to curl again, this should work.
 - In the end, delete both the namespaces, which should delete the services and deployments underneath them.
 
 
